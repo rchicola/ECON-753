@@ -1,0 +1,65 @@
+
+*****************************************************
+*HW 1 
+*****************************************************
+use "C:\Users\Spong\Desktop\Education_Research_and_Software_Learning_Materials\UNR_Classes\Spring 2020\ECON 758 Empirical Public Economics\HW\HW1\ps1.dta"
+
+/*Question 1 Part C*/
+eststo WithChildren: estpost sum age ed nonwhite children work earn if children>0
+eststo WithoutChildren: estpost sum age ed nonwhite children work earn if children==0
+
+esttab WithoutChildren WithChildren  using Table1.rtf, rtf main(mean) title("Summary Statistics")  mtitle("With Children" "Without Children") replace
+esttab WithoutChildren WithChildren  using Table1.tex, tex main(mean) title("Summary Statistics")  mtitle("With Children" "Without Children") replace
+/*Question 1 Part D*/ 
+eststo WithOneChild: estpost sum age ed nonwhite children work earn if children==1
+eststo WithTwoMoreChild: estpost sum age ed nonwhite children work earn if children>=2
+
+esttab WithoutChildren WithChildren WithOneChild WithTwoMoreChild using Table1.rtf, rtf main(mean) title("Summary Statistics")  mtitle("Without Children" "With Children" "With One Child" "With Two or More Children") replace
+esttab WithoutChildren WithChildren WithOneChild WithTwoMoreChild using Table1.tex, tex main(mean) title("Summary Statistics")  mtitle("Without Children" "With Children" "With One Child" "With Two or More Children") replace
+
+/*Question 2 Part A*/ 
+**Creating a unique identifier
+gen N=_n
+*Actually, need total rows in each year
+*Creates denominator for labor force in each year
+bysort year: egen Tot_LF = count(N)
+*Actually, can create LF rate directly
+*Creates Labor Force Participation rate for each year (decimal)
+egen LFrate =mean(work), by(year)
+*create child indicator vairiable
+gen child = 1 if children>0
+replace child =0 if children==0
+*Create post-treatment indicator variable.
+gen post1993 = 1 if year>=1994
+replace post1993 = 0 if year < 1994
+ 
+ 
+bysort year: egen ChildEmployedRate = mean(work) if child==1
+
+bysort year: egen NoChildEmployedRate = mean(work) if child==0
+
+ 
+ 
+ *drop EmployedRate
+gen  EmployedRate = ChildEmployedRate
+replace EmployedRate =  NoChildEmployedRate if EmployedRate==.
+
+
+ *drop EmployedNoRate
+gen  EmployedNoRate = ChildEmployedRate
+replace EmployedNoRate =  NoChildEmployedRate if EmployedNoRate==.
+
+
+ *Successful graph
+twoway (connected EmployedNoRate year if child==0) (connected EmployedRate year if child==1), ytitle(Annual Mean Labor Market Participation Rate) xtitle(Year) title(Figure 1) legend(on)
+
+
+
+
+
+
+
+
+
+
+
