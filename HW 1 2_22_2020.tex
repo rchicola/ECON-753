@@ -1,0 +1,257 @@
+\documentclass{article}
+\usepackage{amsmath,enumitem}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage[margin=1in]{geometry}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{placeins}
+\usepackage[margin=1in]{geometry}
+
+
+\begin{document}
+	
+	
+\title{Econ 758 Assignment 1}
+\author{Aaina Sharma and Randall Chicola}
+\maketitle
+\textbf{Empirical Application – Earned Income Tax Credit
+} \\
+
+\textbf{\underline{Question 1: Theoretical background and summary statistics}}
+
+\begin{enumerate}
+	
+\item \textbf{Give a short description of the relevant aspects of the EITC expansion in 1993. (Hint: Have a look at Eissa and Hoynes, 2004.) Briefly discuss the theoretical predictions for the impact of the reform on the labor market participation of single women with children. You do not need to present a formal model!}\\
+
+\textit{Answer: The EITC after its inception in 1975 as a payroll tax offset for low income families changed little until the TRA86 expansion in 1986, with continued expansion in 1990 OBRA90, and 1993 OBRA93.} \\
+
+\textit{According to the Congressional Research Service's "The Earned Income Tax Credit (EITC): An Overview", the Clinton administration advocated the expansion to give incentive to "make work pay" for low income families with at least one full time working member making minimum wage.}\\
+
+\textit{The were several material changes to the qualifying parameters of the EITC. Firstly, the maximum credits credit rates (maximum amount of qualified income for computing the credit) increased for a one child family from 23\% to 34\% in 1996. A family with two or more children saw a credit rate increase from 25\% to 40\%. Secondly, there was a lowering of the phase out range, 16.43\% to 15.98\% for one child families but the phaseout was increased from 17.86\% to 21.06\%.}\\
+
+\textit{This would indicate that while the increase increases the slope for families of all size in the Phase-in region gives greater incentive to work, it appears divergent incentives may have been created for families with one child versus two or more children. Just as the steeper slope in the phase out region gives incentive to work, the shallower slope in the phase out region is to mitigate the negative substitution and income effects.} \\
+
+\textit{While one child families were given incentive to work less as the amount of qualified income decreased in the phase out region which effectively increased there marginal tax rate when earning income beyond the phase-out threshold. Conversely, the increase in the rate applied to qualified income for families with two or more children provides less penalty for increasing income which would encourage labor force participation. } \\
+
+\textit{Theoretical predictions of the re-form's impact on labor force participation of single women with children would be positive since a single taxpayer who still does not work as well those who prefer to work regardless have not changed their behavior. Those taxpayers on the the margin, may find the additional EITC income a sufficient inducement to enter the labor force.}
+
+
+\item \textbf{Would you expect the number of children to influence the size of the effect? Why or why not? Explain.}
+
+\textit{Answer: Since the number of eligible children is one of the parameters in  determining amount and eligibility of the EITC tax credit, more children resulting in a larger credit, it would not be surprising for the size of the effect to be influenced, which would allow for there to be identification between the groups of EITC participants. }
+
+\item \textbf{Generate a table with descriptive statistics (Table 1, structured as in Table I in Eissa and Liebman, 1996), which contains the sample means of the variables nonwhite age ed work earn for two groups: single women with and without children. You do not need to display the standard deviations. Briefly discuss the differences.}
+
+\textit{Answer: }
+\begin{table}[htbp]\centering
+	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\caption{Summary Statistics}
+	\begin{tabular}{l*{4}{c}}
+		\hline\hline
+		&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+		&\multicolumn{1}{c}{Without Children}&\multicolumn{1}{c}{With Children}&\multicolumn{1}{c}{With One Child}&\multicolumn{1}{c}{With Two or More Children}\\
+		\hline
+		age         &       38.50         &       32.72         &       33.76         &       32.05         \\
+		&                     &                     &                     &                     \\
+		[1em]
+		ed          &       8.549         &       9.001         &       8.992         &       9.007         \\
+		&                     &                     &                     &                     \\
+		[1em]
+		nonwhite    &       0.516         &       0.665         &       0.596         &       0.709         \\
+		&                     &                     &                     &                     \\
+		[1em]
+		children    &           0         &       2.097         &           1         &       2.801         \\
+		&                     &                     &                     &                     \\
+		[1em]
+		work        &       0.574         &       0.466         &       0.538         &       0.421         \\
+		&                     &                     &                     &                     \\
+		[1em]
+		earn        &     13760.3         &      7909.9         &      9928.3         &      6613.5         \\
+		&                     &                     &                     &                     \\
+		\hline
+		\(N\)       &        5927         &        7819         &        3058         &        4761         \\
+		\hline\hline
+		\multicolumn{5}{l}{\footnotesize mean coefficients; \textit{t} statistics in parentheses}\\
+		\multicolumn{5}{l}{\footnotesize \sym{*} \(p<0.05\), \sym{**} \(p<0.01\), \sym{***} \(p<0.001\)}\\
+	\end{tabular}
+\end{table}
+
+
+
+
+
+\item \textbf{Now calculate the sample means separately for single women with one child and women with two or more children (add the information to Table 1). How do they differ from each other?}
+
+\textit{Answer: See Table 1 above.\\
+Table 1 gives a brief overview of the demographic characteristics of single women without children, with children, with one child, and with two or more children. In terms of age, we see that single women without children tend to be older than those with children, with one child or with two or more children on average. We would expect this relationship as an older woman is more likely to have children that have left the household. Additionally, single women with two or more children are more likely to be nonwhite in comparison to the other counterparts. This relationship gives insight on the fact that nonwhite families are larger than white families on average. The data also reveals that on average single women without children participant more in the labor force in comparison to any of the other comparison groups, and they are also the highest earners on average.  }
+
+\end{enumerate}
+
+
+\textbf{\underline{Question 2: Difference-in-differences analysis}}\\
+
+\bigskip
+For the following analysis you need to generate two dummy variables to identify the treatment group (single women with children) [call it child] and the post-treatment period (1994-1996) [call it post1993].
+
+
+\begin{enumerate}
+	
+	\item \textbf{Create a figure (Figure 1) that illustrates the annual mean labor market participation rates by year (1991-1996) for single women with children (treatment group) and single women without children (control group). Label the axes and include a title and a legend into the graph.}
+
+\textit{Answer: See Figure 1}
+
+\includegraphics[width = \textwidth]{Figure 1.png}
+
+
+
+\item \textbf{Now normalize the value of the labor force participation rate for each of the two groups to group-specific 1991 values. That is, the mean of the labor market participation rates in 1991 become equal to 1. Plot a graph (as the one before, including labeling, title, and legend) in Figure 2.}
+
+\textit{Answer: See Figure 2}
+
+
+\includegraphics[width = \textwidth]{Figure 2.png}
+
+
+
+
+
+\item \textbf{Based on Figures 1 and 2, discuss the validity of using single women without children as control group.   }
+
+
+\textit{Answer: Using single women without children as a control group is valid as Figure 1 and Figure 2 assist in illustrating the common trend assumption. The common trend assumption states that the trend of the two groups would be the same if the treatment didn’t occur. If we evaluate the two groups prior to the EITC expansion, it is evident that the two groups trend in parallel. However, the annual mean labor participation rate of single women without children is higher than the annual mean labor participation rate of single women with children. If the EITC expansion did not occur, there seems to be no other economic shock that changes labor force participation rate of single women with children. It is only after the shock that the control group does not trend in parallel to the treatment group. }
+
+
+
+\item \textbf{ Calculate the sample means of labor force participation rates (work) of women with and without children for the pre- (average over 1991-1993) and post-reform (average over 1994-1996) period. Organize your table (Table 2) as in Table II in Eissa and Liebman (1996).  }
+
+
+\textit{Answer: See Table 2 }
+
+\includegraphics[width = \textwidth]{Table 2.png}
+
+
+
+\item \textbf{  Calculate the within- and between-group differences as well as the unconditional difference-in-differences estimate and add them to Table 2. Briefly comment on your results. }
+
+
+\textit{Answer: The within in group differences illustrate that the treatment group, single women with children, were most impacted by the 1993 EITC expansion as there labor force participation rate increased by 4.49 percentage points. As expected, the labor force participation rate of the control group doesn’t change much post the 1993 expansion as it decreases by .02 percentage points. The between group differences reveal how the gap of labor force participation decreases between single women with children and single women without children post the 1993 EITC expansion. The difference in difference estimate shows that the due to the EITC expansion labor force participation of single women with children increased by 4.69 percentage points more than those women without children.  }
+
+\item \textbf{ Repeat the comparison separately for women with one child and for women with at least two children for the years before and after the EITC expansion. Again compute the within- and between-group differences and the difference-in-differences estimates. Compare each of the two groups separately to single women without children (the control group). Display the results in Table 3 and discuss your findings. For which of the two groups do you find larger treatment effects? Is this consistent with the theoretical predictions?  }
+
+\includegraphics[width = \textwidth]{Table 3.png}
+
+
+\textit{Answer: The within group difference in Panel A reveals that single women with one child increased their mean annual labor participation rate increased by 3.05 percentage points. Panel B shows that the single women with two children or more increased labor force participation by 5.32 percentage points. As anticipated, single women with two or more children were most impacted by the EITC expansion. The difference in difference estimation shows that single women with one child increased labor force participation by 3.25 percentage points in comparison to single women without children. Single women with two or more children also increased labor force participation by 5.52 percentage points in comparison to single women without children. While both treatment groups were impacted by the EITC expansion, women with two or more children were impacted the most as anticipated.  }
+
+\item \textbf{ Return to the comparison of women with and without children. Estimate the difference-in-differences effect from the EITC expansion by running OLS regressions. As dependent variable, use the dummy indicating labor market participation (work). First run a regression without controls (“unconditional diff-in-diff estimate”). Then add control variables (urate nonwhite age ed) to obtain the “conditional diff-in-diff estimate”. Present your results (including standard errors) in Table 4 and interpret them. Compare the estimates and their statistical significance for the conditional and unconditional difference-in-differences estimates. Also comment on the estimated coefficients of child and post1993.  }
+
+
+\textit{Answer: See the Children Versus NoChildren EITC Expansion Table. Beginning with the Unconditional case, to interpret the regression we include the "Kidpost" interaction variable whose coefficient is interpreted only if both the child and post1993 indicators are 1 . The regression on the work variable, which takes on 0 or 1 indicates that a woman with a child after the reform would have a (0.575-.00207-.129+.0469) = 0.49083 or 49.083\% chance of participating in the labor force. A woman with children before the reform would have a (.5751.129) =.0.446 or 44.6 \% chance of participating in the labor force. For this group, women with children, this change in labor force participation post reform indicates the EITC expansion had the intended impact of increasing labor force participation.} \\
+
+\textit{For women without children before the reform, we would expect just the constant 0.575 or 57.5\% labor force participation and after the reform of (0.575-00207)= 0.57293 or 57.293 \% labor force participation rate for this control group. the very small an insignificant coefficient for the post1993 variably makes sense as the effect of EITC treatment is predicated on the children as part of the requirement. }\\
+
+\textit{In the case of the Conditional regression the post 1993 coefficient (-0.0234) appears more significant with the inclusion of the demographic variables, but the effect of the EITC policy remains robust as indicated by the KidPost 0.0495 coefficient. Having children in general still makes a woman less likely to participate in the labor force( child coefficient -.118 versus -.129 between unconditional and conditional), but the positive and significant coefficient on the Kidpost interaction variable indicates that the reform increases the chance of participating in the labor force by 4.95\% than they otherwise would have without the EITC expansion.}
+
+\begin{table}[htbp]\centering
+	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\caption{Children Versus NoChildren EITC Expansion}
+	\begin{tabular}{l*{2}{c}}
+		\hline\hline
+		&\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}\\
+		&\multicolumn{1}{c}{Unconditional}&\multicolumn{1}{c}{Conditional}\\
+		\hline
+		KidPost     &      0.0469\sym{***}&      0.0495\sym{***}\\
+		&    (0.0172)         &    (0.0170)         \\
+		[1em]
+		child       &      -0.129\sym{***}&      -0.118\sym{***}\\
+		&    (0.0117)         &    (0.0119)         \\
+		[1em]
+		post1993    &    -0.00207         &     -0.0234\sym{*}  \\
+		&    (0.0129)         &    (0.0135)         \\
+		[1em]
+		urate       &                     &     -0.0164\sym{***}\\
+		&                     &   (0.00330)         \\
+		[1em]
+		nonwhite    &                     &     -0.0445\sym{***}\\
+		&                     &   (0.00900)         \\
+		[1em]
+		age         &                     &     0.00195\sym{***}\\
+		&                     &  (0.000437)         \\
+		[1em]
+		ed          &                     &      0.0171\sym{***}\\
+		&                     &   (0.00164)         \\
+		[1em]
+		\_cons      &       0.575\sym{***}&       0.496\sym{***}\\
+		&   (0.00885)         &    (0.0355)         \\
+		\hline
+		\(N\)       &       13746         &       13746         \\
+		r2          &      0.0126         &      0.0273         \\
+		F           &       58.45         &       55.09         \\
+		\hline\hline
+		\multicolumn{3}{l}{\footnotesize Standard errors in parentheses}\\
+		\multicolumn{3}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+	\end{tabular}
+\end{table}
+
+
+
+
+
+
+\item \textbf{  Estimate a conditional (i.e., including urate nonwhite age ed), “placebo” treatment model on the pre-treatment period. For this purpose, take data from the years 1991-1993 only and leave the treatment and control groups unchanged. Assume for the analysis that the placebo reform would have taken place on January 1st, 1992 (generate a dummy variable postplacebo that is one for year 1992 and after and an interaction with child) and present your results (including standard errors) in Table 5. What do you find, and how do you interpret this? }
+
+
+
+\begin{table}[htbp]\centering
+	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+	\caption{Conditional Placebo Estimate}
+	\begin{tabular}{l*{1}{c}}
+		\hline\hline
+		&\multicolumn{1}{c}{(1)}\\
+		&\multicolumn{1}{c}{Conditional}\\
+		\hline
+		postplacebo &      0.0114         \\
+		&    (0.0189)         \\
+		[1em]
+		child       &      -0.115\sym{***}\\
+		&    (0.0147)         \\
+		[1em]
+		postplacebo\_child&    -0.00795         \\
+		&    (0.0246)         \\
+		[1em]
+		urate       &     -0.0221\sym{***}\\
+		&   (0.00449)         \\
+		[1em]
+		nonwhite    &     -0.0389\sym{***}\\
+		&    (0.0121)         \\
+		[1em]
+		age         &     0.00193\sym{***}\\
+		&  (0.000597)         \\
+		[1em]
+		ed          &      0.0156\sym{***}\\
+		&   (0.00220)         \\
+		[1em]
+		\_cons      &       0.545\sym{***}\\
+		&    (0.0473)         \\
+		\hline
+		\(N\)       &        7401         \\
+		r2          &      0.0312         \\
+		F           &       34.03         \\
+		\hline\hline
+		\multicolumn{2}{l}{\footnotesize Standard errors in parentheses}\\
+		\multicolumn{2}{l}{\footnotesize \sym{*} \(p<0.10\), \sym{**} \(p<0.05\), \sym{***} \(p<0.01\)}\\
+	\end{tabular}
+\end{table}
+
+
+\textit{  When including a placebo reform variable for 1992, which never took place, our conditional regression yielded a coefficient of 0.0114 with a standard error of 0.0189 making the placebo coefficient not significant which gives supporting evidence to the policy effects on labor force from the EITC expansion actually implemented in 1993. Had there been a statistically significant coefficient for the placebo variable, it might have called into question the validity of prior results as to the policy effects of the EITC.  }
+
+
+
+\end{enumerate}
+
+
+
+\end{document}
