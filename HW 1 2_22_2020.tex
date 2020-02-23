@@ -148,11 +148,22 @@ For the following analysis you need to generate two dummy variables to identify 
 \item \textbf{ Return to the comparison of women with and without children. Estimate the difference-in-differences effect from the EITC expansion by running OLS regressions. As dependent variable, use the dummy indicating labor market participation (work). First run a regression without controls (“unconditional diff-in-diff estimate”). Then add control variables (urate nonwhite age ed) to obtain the “conditional diff-in-diff estimate”. Present your results (including standard errors) in Table 4 and interpret them. Compare the estimates and their statistical significance for the conditional and unconditional difference-in-differences estimates. Also comment on the estimated coefficients of child and post1993.  }
 
 
-\textit{Answer: See the Children Versus NoChildren EITC Expansion Table. Beginning with the Unconditional case, to interpret the regression we include the "Kidpost" interaction variable whose coefficient is interpreted only if both the child and post1993 indicators are 1 . The regression on the work variable, which takes on 0 or 1 indicates that a woman with a child after the reform would have a (0.575-.00207-.129+.0469) = 0.49083 or 49.083\% chance of participating in the labor force. A woman with children before the reform would have a (.5751.129) =.0.446 or 44.6 \% chance of participating in the labor force. For this group, women with children, this change in labor force participation post reform indicates the EITC expansion had the intended impact of increasing labor force participation.} \\
+\begin{equation}
+Unconditional: work_{i,t}= \beta_{0} + \beta_{1} KidPost_{i,t} + \beta_{2} Child_{i,t} +\beta_{3} Post1993 + \epsilon_{i,t} 
+\end{equation}
 
-\textit{For women without children before the reform, we would expect just the constant 0.575 or 57.5\% labor force participation and after the reform of (0.575-00207)= 0.57293 or 57.293 \% labor force participation rate for this control group. the very small an insignificant coefficient for the post1993 variably makes sense as the effect of EITC treatment is predicated on the children as part of the requirement. }\\
+\begin{multline}
+Conditional: work_{i,t}= \beta_{0} + \beta_{1} KidPost_{i,t} + \beta_{2} Child_{i,t} +\beta_{3} Post1993  \\
++ \beta_{4} urate + \beta_{5} nonwhite + \beta_{6} age + \beta_{7} ed +     \epsilon_{i,t} 
+\end{multline}
 
-\textit{In the case of the Conditional regression the post 1993 coefficient (-0.0234) appears more significant with the inclusion of the demographic variables, but the effect of the EITC policy remains robust as indicated by the KidPost 0.0495 coefficient. Having children in general still makes a woman less likely to participate in the labor force( child coefficient -.118 versus -.129 between unconditional and conditional), but the positive and significant coefficient on the Kidpost interaction variable indicates that the reform increases the chance of participating in the labor force by 4.95\% than they otherwise would have without the EITC expansion.}
+
+\textit{Answer: See the Children Versus NoChildren EITC Expansion Table. Beginning with the Unconditional case, to interpret the regression we include the "Kidpost" interaction variable whose coefficient is interpreted only if both the child and post1993 indicators are equal to one. The Kidpost interaction term gives the marginal effect of the EITC reform on single women with children and single women without children. The primary driver of the difference in labor force participation of 4.483\% for women with children in the pre-reform and post reform periods (44.6\% and 49.083\% respectively) is the 0.0469 coefficient on the KidPost interaction variable. The implied 4.69\% marginal effect is significant which gives credence to the story that the EITC has been an effective policy measure for this group, women with children.} \\
+
+\textit{The marginal effect for women without children between the pre-reform and post-reform periods is effectively zero since the coefficient is small and not statistically significant. For women without children before the reform, we would expect just the constant 0.575 or 57.5\% labor force participation. After the reform (0.575-0.00207)= 0.57293 or 57.293 \% labor force participation rate would be expected for this control group. And to reiterate, this small difference is not significant for the coefficient. The small coefficient for the post1993 variable makes sense as the effect of EITC treatment is predicated on the children as part of the requirement for qualified income. }\\
+
+
+
 
 \begin{table}[htbp]\centering
 	\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
@@ -198,10 +209,52 @@ For the following analysis you need to generate two dummy variables to identify 
 
 
 
+\begin{equation}
+Unconditional [Child;Post]:  \widehat{work_{i,t}}= 0.575 + 0.0469 * (1) - 0.129 (1) - 0.00207 * (1) = 0.49083‬
+\end{equation}
+
+\begin{equation}
+Unconditional [Child;Pre]:  \widehat{work_{i,t}}= 0.575 + 0.0469 * (0) - 0.129 (1) - 0.00207 * (0) =  0.446
+\end{equation}
+
+\begin{equation}
+Unconditional [NoChild;Post]:  \widehat{work_{i,t}}= 0.575 + 0.0469 * (0) - 0.129 (0) - 0.00207 * (1) = 0.57293207
+\end{equation}
+
+\begin{equation}
+Unconditional [NoChild;Pre]:  \widehat{work_{i,t}}= 0.575 + 0.0469 * (0) - 0.129 (0) - 0.00207 * (0) = 0.575
+\end{equation}
+
+
+
+\textit{In the case of the Conditional regression, the post 1993 coefficient (-0.0234) appears more significant with the inclusion of the demographic variables, but the effect of the EITC policy remains robust as indicated by the KidPost 0.0495 coefficient. Having children in general still makes a woman less likely to participate in the labor force( child coefficient -.118 versus -.129 between unconditional and conditional), but the positive and significant coefficient on the Kidpost interaction variable indicates that the reform increases the chance of participating in the labor force by 4.95\% than they otherwise would have without the EITC expansion.}
+
+
+
+
+
+
+
+
+
+\begin{multline}
+Conditional : work_{i,t}= 0.496 + 0.0495* KidPost_{i,t} - .118* Child_{i,t} -.0234* Post1993  \\
+-0.0164* urate - 0.0445* nonwhite + 0.00195 age + 0.0171 ed +     \epsilon_{i,t} 
+\end{multline}
+
+
+
+
+
+
 
 
 \item \textbf{  Estimate a conditional (i.e., including urate nonwhite age ed), “placebo” treatment model on the pre-treatment period. For this purpose, take data from the years 1991-1993 only and leave the treatment and control groups unchanged. Assume for the analysis that the placebo reform would have taken place on January 1st, 1992 (generate a dummy variable postplacebo that is one for year 1992 and after and an interaction with child) and present your results (including standard errors) in Table 5. What do you find, and how do you interpret this? }
 
+
+
+
+\textit{  When including a placebo reform variable for 1992, which never took place, our conditional regression yielded a coefficient of 0.0114 with a standard error of 0.0189 making the placebo coefficient not significant which gives supporting evidence to the policy effects on labor force from the EITC expansion actually implemented in 1993. Had there been a statistically significant coefficient for the placebo variable, it might have called into question the validity of prior results as to the policy effects of the EITC.  }
 
 
 \begin{table}[htbp]\centering
@@ -246,7 +299,8 @@ For the following analysis you need to generate two dummy variables to identify 
 \end{table}
 
 
-\textit{  When including a placebo reform variable for 1992, which never took place, our conditional regression yielded a coefficient of 0.0114 with a standard error of 0.0189 making the placebo coefficient not significant which gives supporting evidence to the policy effects on labor force from the EITC expansion actually implemented in 1993. Had there been a statistically significant coefficient for the placebo variable, it might have called into question the validity of prior results as to the policy effects of the EITC.  }
+
+
 
 
 
